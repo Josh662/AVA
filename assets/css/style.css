@@ -1,0 +1,654 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "pet";
+    src: url("/assets/fonts/pet.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variáveis e configurações globais */
+
+:root {
+    --cor-texto: #000000;
+    --cor-texto2: #ffffff;
+    --cor-fundo: #ffffff;
+    --cor-footer: #000000;
+    --cor-bt: #F2A341;
+    --cor-bt-hover: #593825;
+    --cor-amarelo: #F2CB05;
+    --cor-azul: #049DD9;
+
+    --hei-header: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Definições em classes globais */
+
+.pet {
+    font-family: "pet", Arial, Helvetica, sans-serif;
+}
+
+/* Configurações no BANNER DE COOKIES */
+
+.cookies {
+    width: 80vw;
+    left: 10vw;
+    bottom: 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-fundo);
+    border: 1px solid;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.cookies h1 {
+    font-size: 16px;
+    margin: 30px 5px 0;
+}
+
+.cookies .opc button {
+    width: 80px;
+    height: 30px;
+    margin: 20px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--cor-fundo);
+    font-weight: bold;
+}
+
+.recusar {
+    background-color: #cc0000;
+}
+
+.aceitar {
+    background-color: var(--cor-azul);
+}
+
+/* Configurações no Header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--hei-header);
+    padding: 10px 20px;
+    border-bottom: 1px solid;
+    justify-content: space-between;
+    background-color: #ffffff31;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+header, header * {
+    display: flex;
+    align-items: center;
+}
+header div {
+    gap: 0 10px;
+}
+header div img {
+    height: 50px;
+}
+header div h1 {
+    text-transform: uppercase;
+}
+header a {
+    margin-right: 40px;
+    color: var(--cor-bt);
+    font-weight: bold;
+}
+
+/* Configurações no MAIN */
+
+main {
+    padding-top: var(--hei-header);
+    top: var(--hei-header);
+}
+
+/* Configurações no MAIN da página ADOTE */
+
+.adote main .s1 {
+    height: 80vh;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 20px;
+    background-image: linear-gradient(45deg, var(--cor-amarelo), #229CB3, #407E95);
+}
+
+.adote main .s1 img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.adote main .s1 div {
+    max-width: 500px;
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px;
+}
+
+
+.adote main .s1 div h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.adote main .s1 div p {
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.adote main .s2 {
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0;
+}
+
+.adote main .s2 .dados {
+    padding: 20px;
+    background-color: var(--cor-fundo);
+}
+
+.adote main .s2 .dados-gerais, .adote main .s2 .dados-secundarios {
+    text-align: center;
+}
+
+.adote main .s2 .dados-gerais {
+    margin: 0 auto 20px;
+    max-width: 300px;
+}
+
+.adote main .s2 .dados-secundarios {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 50px;
+}
+
+.adote main .s2 h2 {
+    font-size: 40px;
+}
+
+.adote main .s2 h3 {
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+.adote main .s2 .paralelo {
+    height: 300px;
+    width: 600px;
+    position: absolute;
+    background-color: var(--cor-azul);
+    transform: skew(6deg, 3deg);
+    z-index: -1;
+}
+
+.adote main .s3 {
+    background-color: #f2cb059f;
+    padding: 20px;
+}
+
+.adote main .s3 form {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.adote main .s3 form fieldset {
+    margin: 10px;
+    border: none;
+}
+
+.adote main .s3 form .data-hora {
+    padding: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.adote main .s3 form fieldset button {
+    padding: 20px 50px;
+    border: none;
+    border-radius: 10px;
+    color: var(--cor-texto2);
+    background-color: var(--cor-azul);
+    cursor: pointer;
+}
+
+/* Configurações no MAIN da página CONTATO */
+
+.contato main {
+    margin-top: var(--hei-header);
+    padding: 20px;
+    background-color: #f2cb059f;
+}
+
+.contato main .s1 {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contato main .s1 .form_contato {
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+    background-color: var(--cor-fundo);
+}
+
+.contato main .s1 .form_contato fieldset {
+    border: none;
+    margin: 10px 0;
+}
+
+.formulario {
+    position: relative;
+}
+
+.formulario label {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9d9d9d;
+    position: absolute;
+    line-height: 70px;
+    top: 0px;
+    left: 20px;
+    user-select: none;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.formulario input {
+    width: 100%;
+    height: 70px;
+    border: none;
+    background-color: #ededed;
+    border-radius: 4px;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 10px 0 10px;
+}
+
+.formulario textarea {
+    padding: 30px 10px 0;
+    width: 100%;
+    border: none;
+    background-color: #ededed;
+    border-radius: 4px;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 700;
+    resize: none;
+}
+
+.contato main .s1 .form_contato fieldset button {
+    padding: 20px 50px;
+    border: none;
+    border-radius: 10px;
+    color: var(--cor-texto2);
+    background-color: var(--cor-azul);
+    cursor: pointer;
+}
+
+.formulario input:focus ~ label,
+.formulario input:valid ~ label {
+    left: 20px;
+    top: -20px;
+    color: var(--cor-bt);
+}
+
+.formulario textarea:focus ~ label,
+.formulario textarea:valid ~ label {
+    left: 20px;
+    top: -20px;
+    color: var(--cor-bt);
+}
+
+/* Configurações no MAIN da página DOE */
+
+.doe main {
+    margin: var(--hei-header) 0 0;
+    background-image: linear-gradient(45deg, var(--cor-amarelo), #229CB3, #407E95);
+}
+
+.doe main .s1 {
+    width: 800px;
+    margin: 0 auto 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.doe main .s1 div {
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    border-radius: 10px;
+}
+
+.doe main .s1 div .pet {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.doe main .s1 div p {
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.doe main .s1 .dog {
+    height: 200px;
+    border-radius: 10px;
+}
+
+.doe main .s2 {
+    padding: 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.doe main .s2 img {
+    width: 300px;
+    border: 5px solid;
+    border-radius: 3px;
+}
+
+.doe main .s2 div {
+    width: 500px;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--cor-fundo);
+    
+}
+
+.doe main .s2 div * {
+    font-size: 40px;
+}
+
+.doe main .s2 div strong {
+    color: green;
+}
+
+.doe main .s2 div a {
+    color: var(--cor-azul);
+    font-weight: bold;
+}
+
+.doe main .s2 div a:hover {
+    text-decoration: underline;
+}
+
+/* Configurações no MAIN da página DENUNCIE */
+
+.denuncie main {
+    margin: var(--hei-header) 0 0;
+    padding-bottom: 40px;
+    background-image: linear-gradient(90deg, #cc0000, #d48a00);
+}
+
+.denuncie main .s1 {
+    margin: 0 0 40px;
+}
+
+.denuncie main .s1 div {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--cor-fundo);
+    border-radius: 10px;
+}
+
+.denuncie main .s1 div h1 {
+    margin: 20px 0;
+    color: #810303;
+    font-size: 60px;
+}
+
+.denuncie main .s1 div p {
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.denuncie main .s2 {
+    width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--cor-fundo);
+    border-radius: 10px;
+}
+
+.denuncie main .s2 * {
+    border: none;
+}
+
+.denuncie main .s2 form fieldset h2 {
+    margin-bottom: 20px;
+}
+
+.denuncie main .s2 form fieldset button {
+    margin: 20px 0 0;
+    padding: 20px 50px;
+    color: var(--cor-texto2);
+    background-color: var(--cor-azul);
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* Configurações no FOOTER */
+
+footer {
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: var(--cor-footer);
+    text-align: center;
+}
+
+footer .s {
+    padding: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--cor-texto2);
+    background-color: #494242;
+}
+
+footer .s a {
+    color: var(--cor-amarelo);
+}
+
+footer .s a:hover {
+    text-decoration: underline;
+}
+
+footer .s div img {
+    margin-bottom: 20px;
+}
+
+footer .s div .site {
+    display: block;
+    margin: 20px 0;
+}
+
+footer h3 {
+    color: var(--cor-texto2);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1200px) {
+    footer .s {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 0 40px;
+    }
+
+    footer .s iframe {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 850px) {
+    .adote main .s1 {
+        height: auto;
+        display: block !important;
+    }
+
+    .adote main .s1 > * {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .adote main .s1 img {
+        margin-bottom: 20px;
+    }
+
+    .doe main .s1 div {
+        max-width: 300px;
+    }
+
+    .doe main .s1, .doe main .s2 {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .doe main .s1 div, .doe main .s2 img {
+        margin-bottom: 20px;
+    }
+
+    .doe main .s1 > *, .doe main .s2 > * {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .doe main .s2 div {
+        width: 100%;
+        max-width: 440px;
+    }
+
+    footer .s {
+        padding: 20px;
+    }
+
+    footer .s iframe {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    footer h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .adote main .s2 {
+        padding: 0 20px;
+    }
+    .adote main .s2 .dados {
+        width: 100%;
+        max-width: 550px;
+        border: 3px solid var(--cor-azul);
+        border-radius: 10px;
+    }
+
+    .adote main .s2 .paralelo {
+        display: none;
+    }
+
+    .denuncie main {
+        padding: 40px 20px;
+    }
+
+    .denuncie main .s1 div, .denuncie main .s2 {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .denuncie main .s1 div h1 {
+        font-size: 40px;
+    }
+
+    .denuncie main .s2 form fieldset h2 {
+        font-size: 18px;
+    }
+
+    footer h3 {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --hei-header: 120px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header nav ul li {
+        margin: 10px;
+    }
+
+    header nav ul li a {
+        margin: 0;
+    }
+
+    header div a {
+        margin: 10px 0 20px;
+    }
+
+    .adote main .s2 .dados div h2 {
+        font-size: 20px;
+    }
+
+    .adote main .s2 .dados div h3 {
+        font-size: 14px;
+    }
+
+    .adote main .s2 .dados div p {
+        font-size: 10px;
+    }
+}
